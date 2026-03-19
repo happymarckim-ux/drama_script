@@ -1,0 +1,7 @@
+name = "dramascript-ai-proxy"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+ALLOWED_ORIGIN = "https://happymarckim-ux.github.io"
