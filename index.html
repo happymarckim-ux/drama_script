@@ -19,7 +19,8 @@
 body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height:100vh;font-size:14px;line-height:1.6}
 
 .nav{position:fixed;top:0;left:0;right:0;height:56px;background:rgba(250,248,244,0.95);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--border);z-index:100;display:flex;align-items:center;padding:0 24px;gap:0}
-.nav-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--ink);letter-spacing:-0.02em;margin-right:auto}
+.nav-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--ink);letter-spacing:-0.02em;margin-right:auto;cursor:pointer;text-decoration:none;display:block}
+.nav-logo:hover{opacity:.8}
 .nav-logo span{color:var(--gold)}
 .nav-tabs{display:flex;gap:2px}
 .nav-tab{padding:7px 14px;font-size:13px;font-weight:500;color:var(--ink3);cursor:pointer;border-radius:8px;border:none;background:none;transition:all .15s;font-family:var(--sans)}
@@ -357,7 +358,7 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
 
 <!-- NAV -->
 <nav class="nav">
-  <div class="nav-logo">드라마스크립트<span>AI</span></div>
+  <a class="nav-logo" href="https://happymarckim-ux.github.io/drama_script/" onclick="showPage('home');return false;">드라마스크립트<span>AI</span></a>
   <div class="nav-tabs">
     <button class="nav-tab active" onclick="showPage('home')">홈</button>
     <button class="nav-tab" onclick="showPage('wizard')">새 프로젝트</button>
