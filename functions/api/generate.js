@@ -23,7 +23,7 @@ export async function onRequestPost(context) {
     return jsonRes({ ok: false, error: 'title and logline are required' }, 400, corsHeaders);
   }
 
-  const apiKey = env.GENSPARK_TOKEN;
+  const apiKey = env.OPENAI_API_KEY || env.GENSPARK_TOKEN;
   const baseUrl = env.LLM_BASE_URL || 'https://www.genspark.ai/api/llm_proxy/v1';
   if (!apiKey) return jsonRes({ ok: false, error: 'Server not configured' }, 500, corsHeaders);
 
@@ -91,7 +91,7 @@ episodes는 ${epCount}개 전부, script는 1화 첫 3씬만 작성. 순수 JSON
         'Authorization': `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: 'gpt-5-mini',
+        model: 'gpt-5.1',
         messages: [
           { role: 'system', content: systemPrompt },
           { role: 'user', content: userPrompt },
